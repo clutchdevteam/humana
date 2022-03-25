@@ -1,5 +1,5 @@
 <template>
-  <img class="w-full h-auto" :src="src" :alt="alt" />
+  <img :src="src" :alt="alt" />
 </template>
 
 <script>
@@ -23,5 +23,5 @@ export default {
       required: true,
     },
   },
-};
+}
 </script>

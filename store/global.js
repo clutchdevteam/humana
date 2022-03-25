@@ -21,7 +21,6 @@ export const mutations = {
     state.loaded = isLoaded;
   },
   setGlobals(state, globals) {
-    console.log(globals);
     state.mainNav = globals.mainNav;
     state.logo = globals.logo;
 

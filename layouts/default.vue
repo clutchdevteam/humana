@@ -14,22 +14,16 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState("global", [
-      "pageHasModalOpen",
-      "isMobileMenuOpen",
-      "mainNav",
-      "logo",
-      "footer",
-    ]),
+    ...mapState('global', ['pageHasModalOpen', 'isMobileMenuOpen', 'mainNav', 'logo', 'footer']),
     hasOpenMenu() {
-      return this.pageHasModalOpen || this.isMobileMenuOpen;
+      return this.pageHasModalOpen || this.isMobileMenuOpen
     },
   },
-};
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -47,12 +41,5 @@ body {
 header,
 footer {
   flex-grow: 0;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
 }
 </style>
