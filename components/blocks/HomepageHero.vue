@@ -1,16 +1,16 @@
 <template>
   <div>
-    <section class="bg-primary-700">
+    <section class="bg-pattern bg-primary-700">
       <div
         class="
           container
           mx-auto
           grid
-          lg:grid-cols-2
+          md:grid-cols-2
           gap-8
           items-center
           px-6
-          lg:px-0
+          xl:px-0
           pt-[74px]
           lg:pt-20
         "
@@ -28,7 +28,7 @@
           class="
             hero-image
             hidden
-            lg:block
+            md:block
             overflow-hidden
             absolute
             right-0
@@ -75,11 +75,7 @@
 </template>
 
 <script>
-import BgPattern from '~/assets/bgPattern.svg?inline'
 export default {
-  components: {
-    BgPattern,
-  },
   props: {
     block: {
       type: Object,
@@ -90,16 +86,23 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.bg-pattern {
+  background: url(~/assets/bgPattern.png);
+  background-size: cover;
+  background-position: center;
+
+  @apply bg-primary-700;
+}
 .hero-image {
   border-top-left-radius: 80px;
   border-bottom-left-radius: 80px;
   max-height: 700px;
-  aspect-ratio: 1 / 1.1;
+  height: 75%;
 }
 
-@supports (aspect-ratio) {
+@screen lg {
   .hero-image {
-    aspect-ratio: 1 / 1.1;
+    height: 100%;
   }
 }
 </style>

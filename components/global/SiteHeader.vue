@@ -1,7 +1,7 @@
 <template>
   <header :class="`${isHomepage ? 'absolute' : ''} w-full  z-[51]`">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-0">
-      <div class="w-28 lg:w-32">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6 xl:px-0">
+      <div class="w-28 lg:w-32 z-50">
         <BaseLink href="/" :inert="isMobileMenuOpen">
           <BaseImage v-if="logo" :src="logo.filename" :alt="logo.alt" />
         </BaseLink>
@@ -15,7 +15,7 @@
           </li>
           <li class="text-tertiary font-display flex items-center">
             <p class="mr-2">Spots Open:</p>
-            <p class="text-xl">05</p>
+            <p class="text-xl">{{ this.spotsAvailable }}</p>
           </li>
 
           <li>
@@ -35,7 +35,7 @@
 
             <Portal to="mobile-menu">
               <div
-                :class="`fixed inset-0 bg-black transition duration-150 ${
+                :class="`z-[52] fixed inset-0 bg-black transition duration-150 ${
                   isMobileMenuOpen ? 'bg-opacity-75' : 'bg-opacity-0 pointer-events-none'
                 }`"
                 :inert="!isMobileMenuOpen"
@@ -113,7 +113,7 @@ export default {
     },
   },
   computed: {
-    ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen']),
+    ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen', 'spotsAvailable']),
     isHomepage() {
       return this.$route.fullPath === '/'
     },
@@ -140,5 +140,17 @@ export default {
 <style lang="postcss">
 .mobile-nav ul li div a {
   @apply px-5 py-4 border-b border-gray-300;
+}
+
+.desktop li div a {
+  @apply opacity-75;
+
+  &:hover {
+    @apply opacity-100;
+  }
+}
+
+.nuxt-link-exact-active {
+  @apply opacity-100;
 }
 </style>
