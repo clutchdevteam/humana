@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="bg-pattern bg-primary-700">
+    <section class="bg-pattern">
       <div
         class="
           container
