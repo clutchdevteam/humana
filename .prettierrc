@@ -3,5 +3,6 @@
   "singleQuote": true,
   "semi": false,
   "printWidth": 100,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "vueIndentScriptAndStyle": true
 }

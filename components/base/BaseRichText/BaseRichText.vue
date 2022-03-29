@@ -15,8 +15,7 @@
 
 <style lang="postcss" scoped>
   p,
-  li,
-  ol,
+  ul,
   h1,
   h2,
   h3,
@@ -42,11 +41,19 @@
   li,
   ol {
     @apply opacity-75;
+
+    & p {
+      @apply mb-0;
+    }
   }
 
   ul,
   ol {
     @apply ml-5 opacity-100;
+
+    & li p {
+      @apply mb-2;
+    }
   }
 
   ul {
@@ -67,11 +74,5 @@
 
   a {
     @apply underline font-bold;
-  }
-
-  @screen md {
-    p {
-      @apply text-base;
-    }
   }
 </style>
