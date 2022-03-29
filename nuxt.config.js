@@ -1,9 +1,9 @@
-const isPreview = process.env.NODE_ENV === "development";
+const isPreview = process.env.NODE_ENV === 'development'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "static",
-  dev: process.env.NODE_ENV !== "production",
+  target: 'static',
+  dev: process.env.NODE_ENV !== 'production',
 
   env: {
     STORYBLOK_API_KEY: process.env.STORYBLOK_API_KEY,
@@ -13,23 +13,29 @@ export default {
 
   storybook: {
     port: 4000,
-    stories: ["~/components/**/*.stories.js"],
+    stories: ['~/components/**/*.stories.js'],
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Humana",
+    title: 'Humana',
     htmlAttrs: {
-      lang: "en",
+      lang: 'en',
     },
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { hid: "title", name: "title", content: "Humana Code Academy" },
-      { name: "format-detection", content: "telephone=no" },
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { hid: 'title', name: 'title', content: 'Humana Code Academy' },
+      { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Sans:wght@500;700&display=swap',
+      },
+    ],
   },
 
   generate: {
@@ -39,14 +45,14 @@ export default {
     routes: function (callback) {
       const token = isPreview
         ? process.env.STORYBLOK_PREVIEW_API_KEY
-        : process.env.STORYBLOK_API_KEY;
+        : process.env.STORYBLOK_API_KEY
 
-      const version = isPreview ? "draft" : "published";
-      let cacheVersion = 0;
+      const version = isPreview ? 'draft' : 'published'
+      let cacheVersion = 0
       // ignore these files and folders
-      const ignoreFiles = ["home", "global", "sitefooter"];
+      const ignoreFiles = ['home', 'global', 'sitefooter']
 
-      const routes = ["/"];
+      const routes = ['/']
 
       const getRoutes = async (ignoreFiles) => {
         axios
@@ -54,7 +60,7 @@ export default {
           /* eslint-disable-next-line camelcase */
           .then((space_res) => {
             // timestamp of latest publish
-            cacheVersion = space_res.data.space.version;
+            cacheVersion = space_res.data.space.version
             // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
             axios
               .get(
@@ -68,37 +74,32 @@ export default {
                      * to generate the index.html file of folders that don't
                      * have root files in Storyblok. (No index.html.)
                      */
-                    if (
-                      !(
-                        res.data.links[key].is_folder &&
-                        !res.data.links[key].is_startpage
-                      )
-                    ) {
-                      routes.push("/" + res.data.links[key].slug);
+                    if (!(res.data.links[key].is_folder && !res.data.links[key].is_startpage)) {
+                      routes.push('/' + res.data.links[key].slug)
                     }
                   }
-                });
+                })
 
-                callback(null, routes);
-              });
-          });
-      };
+                callback(null, routes)
+              })
+          })
+      }
 
-      getRoutes(ignoreFiles);
+      getRoutes(ignoreFiles)
 
-      return routes;
+      return routes
     },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "~/plugins/components",
-    "~/plugins/wicg-inert.client.js",
-    "~/plugins/rich-text-renderer.js",
-    "~/plugins/formRoute.js",
+    '~/plugins/components',
+    '~/plugins/wicg-inert.client.js',
+    '~/plugins/rich-text-renderer.js',
+    '~/plugins/formRoute.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -107,45 +108,42 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-    "@nuxt/postcss8",
+    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    "@nuxtjs/composition-api/module",
-    "@nuxtjs/axios",
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/axios',
     [
-      "storyblok-nuxt",
+      'storyblok-nuxt',
       {
         accessToken: process.env.STORYBLOK_PREVIEW_API_KEY,
-        cacheProvider: "memory",
+        cacheProvider: 'memory',
       },
     ],
-    "portal-vue/nuxt",
+    'portal-vue/nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     extend(config, { isClient }) {
       if (isClient) {
-        config.devtool = "source-map";
+        config.devtool = 'source-map'
       }
 
-      const svgRule = config.module.rules.find((rule) =>
-        rule.test.test(".svg")
-      );
+      const svgRule = config.module.rules.find((rule) => rule.test.test('.svg'))
 
-      svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+      svgRule.test = /\.(png|jpe?g|gif|webp)$/
 
       config.module.rules.push({
         test: /\.svg$/,
-        use: ["babel-loader", "vue-svg-loader"],
-      });
+        use: ['babel-loader', 'vue-svg-loader'],
+      })
 
       config.node = {
-        fs: "empty",
-      };
+        fs: 'empty',
+      }
     },
   },
-};
+}

@@ -1,12 +1,12 @@
 export default {
-  title: "Base components/Heading",
-};
+  title: 'Base components/Heading',
+}
 
 export const Default = (args) => ({
   props: Object.keys(args),
   computed: {
     headingText() {
-      return this.default;
+      return this.default
     },
   },
   template: `
@@ -14,28 +14,28 @@ export const Default = (args) => ({
     {{headingText}}
   </BaseHeading>
   `,
-});
+})
 
 Default.argTypes = {
   default: {
-    control: "text",
+    control: 'text',
   },
   size: {
     control: {
-      type: "select",
-      options: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      type: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     },
   },
   tag: {
     control: {
-      type: "select",
-      options: ["h1", "h2", "h3", "h4", "h5", "h6"],
+      type: 'select',
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
     },
   },
-};
+}
 
 Default.args = {
-  default: "Heading Text",
-  size: "h1",
-  tag: undefined,
-};
+  default: 'Heading Text',
+  size: 'h1',
+  tag: null,
+}

@@ -5,7 +5,7 @@
     </template>
 
     <nuxt-link
-      class="block"
+      :class="`${classes} block`"
       v-else
       :id="menu.title.toLowerCase().replace(' ', '-')"
       :to="menu.link.cached_url"
@@ -26,6 +26,10 @@ export default {
       type: Number,
       required: true,
     },
+    classes: {
+      type: String,
+      default: '',
+    },
   },
-};
+}
 </script>

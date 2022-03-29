@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Sans:wght@500;700&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply overflow-x-hidden;
+  @apply overflow-x-hidden font-body;
 }
 
 *:focus-visible {
-  outline-color: #6fcfc9;
+  outline-color: #e55252;
   outline-style: auto;
   outline-offset: 3px;
   outline-width: 2px;
