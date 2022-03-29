@@ -17,6 +17,7 @@
         <BaseRichText class="lg:w-3/4" :content="block.text" />
 
         <nuxt-link
+          v-if="block.link.length"
           class="group font-display flex items-center text-secondary-500 mt-8"
           :to="block.link[0].link.cached_url"
         >
