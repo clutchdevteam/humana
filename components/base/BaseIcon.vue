@@ -9,21 +9,21 @@
 </template>
 
 <script>
-  import IconComponents from '~/utils/registerIconComponents.js'
+import IconComponents from '~/utils/registerIconComponents.js'
 
-  export default {
-    components: {
-      ...IconComponents,
+export default {
+  components: {
+    ...IconComponents,
+  },
+  props: {
+    file: {
+      type: String,
+      required: true,
     },
-    props: {
-      file: {
-        type: String,
-        required: true,
-      },
-      alt: {
-        type: String,
-        required: true,
-      },
+    alt: {
+      type: String,
+      required: true,
     },
-  }
+  },
+}
 </script>

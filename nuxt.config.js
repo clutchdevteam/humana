@@ -11,11 +11,6 @@ export default {
     NODE_ENV: process.env.NODE_ENV,
   },
 
-  storybook: {
-    port: 4000,
-    stories: ['~/components/**/*.stories.js'],
-  },
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Humana',

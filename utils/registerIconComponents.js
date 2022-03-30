@@ -4,4 +4,6 @@ export default {
   MenuIcon: () => import('~/assets/icons/menu-icon.svg?inline'),
   CloseIcon: () => import('~/assets/icons/close-icon.svg?inline'),
   RightChevronIcon: () => import('~/assets/icons/right-chevron-icon.svg?inline'),
+  CodeIcon: () => import('~/assets/icons/code-icon.svg?inline'),
+  RightArrowIcon: () => import('~/assets/icons/right-arrow-icon.svg?inline'),
 }

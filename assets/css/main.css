@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Sans:wght@500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Sans:wght@500;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -6,6 +6,10 @@ html {
 
 body {
   @apply overflow-x-hidden font-body;
+}
+
+.base-wrapper {
+  @apply my-24 lg:my-36 px-6 lg:px-0;
 }
 
 *:focus-visible {
