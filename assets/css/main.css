@@ -9,7 +9,7 @@ body {
 }
 
 .base-wrapper {
-  @apply my-24 lg:my-36 px-6 lg:px-0;
+  @apply my-24 lg:my-36 px-6 xl:px-0;
 }
 
 .content-width {

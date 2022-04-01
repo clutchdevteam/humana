@@ -10,7 +10,7 @@
           <BaseText class="text-white text-lg lg:w-5/6 mb-8">{{ block.text }}</BaseText>
 
           <div>
-            <BaseButton class="w-full lg:w-auto" :href="block.button[0].link.cached_url">
+            <BaseButton :href="block.button[0].link.cached_url">
               {{ block.button[0].text }}
             </BaseButton>
           </div>
