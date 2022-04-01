@@ -12,6 +12,10 @@ body {
   @apply my-24 lg:my-36 px-6 lg:px-0;
 }
 
+.content-width {
+  max-width: 1220px;
+}
+
 *:focus-visible {
   outline-color: #e55252;
   outline-style: auto;

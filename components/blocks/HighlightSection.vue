@@ -1,6 +1,6 @@
 <template>
-  <section class="container mx-auto base-wrapper">
-    <div class="grid lg:grid-cols-2 gap-16 lg:gap-0">
+  <section class="container mx-auto base-wrapper content-width">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
       <div class="flex flex-row">
         <BaseIconWrapper class="mr-6">
           <BaseIcon

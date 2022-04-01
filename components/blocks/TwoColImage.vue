@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto base-wrapper">
+  <section class="container mx-auto base-wrapper content-width">
     <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
       <div :class="{ 'lg:order-last': block.imageRight }">
         <div
