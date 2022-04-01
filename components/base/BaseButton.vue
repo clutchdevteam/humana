@@ -5,7 +5,7 @@
     :to="href"
   >
     <div
-      class="bg-secondary-500 absolute inset-0 z-0 origin-left scale-x-0 transform transition duration-150 ease-in-out rounded-full"
+      class="bg-secondary-500 absolute inset-0 z-0 origin-left opacity-0 scale-x-0 transform transition duration-150 ease-in-out rounded-full"
     />
 
     <span class="relative">
@@ -59,7 +59,7 @@
     }
 
     &:hover div {
-      @apply scale-100;
+      @apply scale-100 opacity-100;
     }
   }
 </style>
