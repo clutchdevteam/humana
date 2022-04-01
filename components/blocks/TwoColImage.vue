@@ -6,16 +6,17 @@
           class="rounded-bl-3xl rounded-tr-3xl lg:rounded-bl-[80px] lg:rounded-tr-[80px] overflow-hidden"
         >
           <BaseImage
+            v-if="block.image"
             class="w-full object-cover"
             :src="block.image.filename"
-            :alt="block.image.al"
+            :alt="block.image.alt"
           />
         </div>
       </div>
 
       <div>
-        <BaseHeading class="mb-8" size="h2">{{ block.heading }}</BaseHeading>
-        <BaseRichText :content="block.text" />
+        <BaseHeading v-if="block.heading" class="mb-8" size="h2">{{ block.heading }}</BaseHeading>
+        <BaseRichText v-if="block.text" :content="block.text" />
       </div>
     </div>
   </section>

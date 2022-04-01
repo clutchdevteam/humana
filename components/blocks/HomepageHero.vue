@@ -10,7 +10,9 @@
           <BaseText class="text-white text-lg lg:w-5/6 mb-8">{{ block.text }}</BaseText>
 
           <div>
-            <BaseButton class="w-full lg:w-auto">{{ block.button[0].text }}</BaseButton>
+            <BaseButton class="w-full lg:w-auto" :href="block.button[0].link.cached_url">
+              {{ block.button[0].text }}
+            </BaseButton>
           </div>
         </div>
 
@@ -36,7 +38,7 @@
           <BaseText>{{ item.text }}</BaseText>
         </div>
 
-        <div class="flex flex-col mt-8 lg:mt-auto">
+        <div class="flex flex-col mt-8 lg:mt-auto lg:col-start-4">
           <div>
             <BaseButton
               class="lg:inline lg:float-right"

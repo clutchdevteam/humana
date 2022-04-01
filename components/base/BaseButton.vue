@@ -1,19 +1,7 @@
 <template>
-  <nuxt-link :class="`btn btn-${theme} block`" v-if="href" :to="href">
+  <nuxt-link :class="`btn btn-${theme}`" v-if="href" :to="href">
     <div
-      class="
-        bg-secondary-500
-        absolute
-        inset-0
-        z-0
-        origin-left
-        scale-x-0
-        transform
-        transition
-        duration-150
-        ease-in-out
-        rounded-full
-      "
+      class="bg-secondary-500 absolute inset-0 z-0 origin-left scale-x-0 transform transition duration-150 ease-in-out rounded-full"
     />
 
     <span class="relative">
@@ -23,19 +11,7 @@
 
   <button v-else :class="`btn btn-${theme}`" :type="btnType" @click="$emit('click')">
     <div
-      class="
-        bg-secondary-500
-        absolute
-        inset-0
-        z-0
-        origin-left
-        scale-x-0
-        transform
-        transition
-        duration-150
-        ease-in-out
-        rounded-full
-      "
+      class="bg-secondary-500 absolute inset-0 z-0 origin-left scale-x-0 transform transition duration-150 ease-in-out rounded-full"
     />
 
     <span class="relative">
@@ -45,41 +21,41 @@
 </template>
 
 <script>
-export default {
-  props: {
-    btnType: {
-      type: String,
-      default: 'button',
+  export default {
+    props: {
+      btnType: {
+        type: String,
+        default: 'button',
+      },
+      theme: {
+        type: String,
+        default: 'primary',
+      },
+      href: {
+        type: String,
+      },
     },
-    theme: {
-      type: String,
-      default: 'primary',
-    },
-    href: {
-      type: String,
-    },
-  },
-}
+  }
 </script>
 
 <style lang="postcss" scoped>
-.btn {
-  @apply relative overflow-hidden font-display px-8 py-1 rounded-full border-2 border-secondary-500 tracking-widest text-center;
+  .btn {
+    @apply relative overflow-hidden font-display px-8 py-1 rounded-full border-2 border-secondary-500 tracking-widest text-center;
 
-  &.btn-primary {
-    @apply text-white;
-  }
+    &.btn-primary {
+      @apply text-white;
+    }
 
-  &.btn-secondary {
-    @apply text-primary-700;
+    &.btn-secondary {
+      @apply text-primary-700;
 
-    &:hover {
-      @apply text-white duration-75;
+      &:hover {
+        @apply text-white duration-75;
+      }
+    }
+
+    &:hover div {
+      @apply scale-100;
     }
   }
-
-  &:hover div {
-    @apply scale-100;
-  }
-}
 </style>
