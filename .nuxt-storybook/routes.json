@@ -1,0 +1,14 @@
+[
+  {
+    "name": "contact-us",
+    "path": "/contact-us",
+    "component": "/Users/drewclements/Desktop/clutch/humana/pages/contact-us.vue",
+    "chunkName": "pages/contact-us"
+  },
+  {
+    "name": "all",
+    "path": "/*",
+    "component": "/Users/drewclements/Desktop/clutch/humana/pages/_.vue",
+    "chunkName": "pages/_"
+  }
+]
