@@ -1,5 +1,9 @@
 <template>
-  <nuxt-link :class="`btn btn-${theme} block lg:inline w-full lg:w-auto`" v-if="href" :to="href">
+  <nuxt-link
+    :class="`btn btn-${theme} block lg:inline-block w-full lg:w-auto`"
+    v-if="href"
+    :to="href"
+  >
     <div
       class="bg-secondary-500 absolute inset-0 z-0 origin-left scale-x-0 transform transition duration-150 ease-in-out rounded-full"
     />
