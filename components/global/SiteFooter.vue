@@ -17,7 +17,7 @@
         </div>
       </div>
     </section>
-    <footer class="bg-primary-500 py-12 lg:py-16 px-6 xl:px-0">
+    <footer class="bg-primary-700 py-12 lg:py-16 px-6 xl:px-0">
       <div
         class="container mx-auto flex flex-col lg:flex-row justify-between items-center mb-8 lg:mb-16"
       >
