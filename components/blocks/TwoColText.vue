@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-tertiary py-12 lg:py-20 px-6 lg:px-0">
+  <section class="bg-tertiary py-12 lg:py-20 px-6 xl:px-0">
     <div class="container mx-auto content-width">
       <BaseHeading size="h2" class="mb-8 lg:mb-12 lg:text-center text-secondary-500">
         {{ block.heading }}

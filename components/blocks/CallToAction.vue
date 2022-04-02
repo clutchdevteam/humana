@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-pattern bg-primary-700 py-12 px-6 lg:px-0">
+  <section class="bg-pattern bg-primary-700 py-12 px-6 xl:px-0">
     <div class="container mx-auto lg:flex justify-between items-center">
       <div>
         <BaseHeading class="lg:w-3/4 mb-8 lg:mb-0 text-tertiary" size="h3" tag="h2">

@@ -13,9 +13,10 @@
             <BaseMenu classes="font-display text-white tracking-wider" :menu="menu" :depth="0" />
             <BaseIcon file="right-chevron-icon" class="h-5 w-5 text-secondary-500 ml-2" alt="" />
           </li>
+
           <li class="text-tertiary font-display flex items-center">
             <p class="mr-2">Spots Open:</p>
-            <p class="text-xl">{{ this.spotsAvailable }}</p>
+            <p class="text-xl">{{ this.spotsAvailable.spotsAvailable }}</p>
           </li>
 
           <li>
