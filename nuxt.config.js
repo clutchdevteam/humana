@@ -11,6 +11,12 @@ export default {
     NODE_ENV: process.env.NODE_ENV,
   },
 
+  loading: {
+    color: '#E55252',
+    height: '2px',
+    throttle: 0,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Humana',
