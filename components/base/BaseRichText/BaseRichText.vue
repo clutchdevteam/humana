@@ -33,12 +33,12 @@
   h3,
   h4,
   h5,
-  h6 {
-    @apply font-bold;
+  h6,
+  b {
+    @apply font-semibold font-display;
   }
 
   p,
-  li,
   ol {
     @apply opacity-75;
 
@@ -72,7 +72,29 @@
     @apply mb-0;
   }
 
+  img {
+    @apply my-8;
+  }
+
   a {
     @apply underline font-bold;
+  }
+
+  @screen lg {
+    h2 {
+      @apply text-2xl;
+    }
+
+    h3 {
+      @apply text-xl;
+    }
+
+    h4 {
+      @apply text-lg;
+    }
+
+    img {
+      @apply my-12;
+    }
   }
 </style>

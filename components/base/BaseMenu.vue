@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-display">
     <template v-if="menu.submenus">
       <BaseMenuItem :menu="menu" :depth="depth + 1" />
     </template>
@@ -16,20 +16,20 @@
 </template>
 
 <script>
-export default {
-  props: {
-    menu: {
-      type: Object,
-      required: true,
+  export default {
+    props: {
+      menu: {
+        type: Object,
+        required: true,
+      },
+      depth: {
+        type: Number,
+        required: true,
+      },
+      classes: {
+        type: String,
+        default: '',
+      },
     },
-    depth: {
-      type: Number,
-      required: true,
-    },
-    classes: {
-      type: String,
-      default: '',
-    },
-  },
-}
+  }
 </script>

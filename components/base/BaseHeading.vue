@@ -1,5 +1,5 @@
 <template>
-  <component :is="component" :class="classes">
+  <component :is="component" :class="size">
     <slot />
   </component>
 </template>
@@ -23,35 +23,6 @@
       component() {
         return this.tag ?? this.size.slice(0, 2)
       },
-      classes() {
-        const classes = []
-
-        switch (this.size) {
-          case 'h1':
-            classes.push('font-semibold', 'text-4xl', 'lg:text-6xl', 'leading-heading')
-            break
-          case 'h2-lg':
-            classes.push('font-semibold', 'text-3xl', 'lg:text-5xl', 'leading-tighter')
-            break
-          case 'h2':
-            classes.push('font-semibold', 'text-2xl', 'lg:text-4xl', 'leading-tighter')
-            break
-          case 'h3':
-            classes.push('font-semibold', 'text-xl', 'lg:text-3xl', 'leading-tighter')
-            break
-          case 'h4':
-            classes.push('font-semibold', 'text-lg', 'lg:text-2xl', 'leading-tighter')
-            break
-          case 'h5':
-            classes.push('font-semibold', 'lg:text-xl', 'leading-snug')
-            break
-          case 'h6':
-            classes.push('font-semibold', 'text-2xs', 'leading-snug', 'uppercase', 'tracking-wide')
-            break
-        }
-
-        return classes.join(' ')
-      },
     },
   }
 </script>
@@ -64,7 +35,39 @@
   h4,
   h5,
   h6 {
-    @apply font-display;
+    @apply font-display font-semibold leading-tight;
+  }
+
+  .h1 {
+    @apply text-4xl;
+  }
+  .h2 {
+    @apply text-3xl;
+  }
+  .h3 {
+    @apply text-xl;
+  }
+  .h4 {
+    @apply text-lg;
+  }
+  @screen md {
+    .h1 {
+      @apply text-6xl;
+    }
+    .h2 {
+      @apply text-5xl;
+    }
+    .h3 {
+      @apply text-3xl;
+    }
+    .h4 {
+      @apply text-2xl;
+    }
+    .h5 {
+      @apply text-xl leading-snug;
+    }
+    .h6 {
+      @apply uppercase;
+    }
   }
 </style>
-}

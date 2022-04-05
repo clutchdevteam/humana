@@ -7,6 +7,7 @@ import CallToAction from '~/components/blocks/CallToAction.vue'
 import TwoColText from '~/components/blocks/TwoColText.vue'
 import ThreeCol from '~/components/blocks/ThreeCol.vue'
 import InteriorTitle from '~/components/blocks/InteriorTitle.vue'
+import FullWidthRichText from '~/components/blocks/FullWidthRichText.vue'
 
 Vue.component('page', Page)
 Vue.component('HomepageHero', HomepageHero)
@@ -16,3 +17,4 @@ Vue.component('CallToAction', CallToAction)
 Vue.component('TwoColText', TwoColText)
 Vue.component('ThreeCol', ThreeCol)
 Vue.component('InteriorTitle', InteriorTitle)
+Vue.component('FullWidthRichText', FullWidthRichText)
