@@ -1,5 +1,5 @@
 <template>
-  <header :class="`${isHomepage ? 'absolute' : ''} w-full  z-[51]`">
+  <header class="absolute w-full z-[51]">
     <div class="container mx-auto flex justify-between items-center py-4 px-6 xl:px-0">
       <div class="w-28 lg:w-32 z-50">
         <BaseLink href="/" :inert="isMobileMenuOpen">

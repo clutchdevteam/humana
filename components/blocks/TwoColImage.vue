@@ -17,6 +17,15 @@
       <div>
         <BaseHeading v-if="block.heading" class="mb-8" size="h2">{{ block.heading }}</BaseHeading>
         <BaseRichText v-if="block.text" :content="block.text" />
+        <div>
+          <BaseButton
+            theme="secondary"
+            v-if="block.button.length"
+            :href="block.button[0].link.cached_url"
+          >
+            {{ block.button[0].text }}
+          </BaseButton>
+        </div>
       </div>
     </div>
   </section>
