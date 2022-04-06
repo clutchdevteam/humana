@@ -23,7 +23,11 @@
       >
         <div class="mb-8 lg:mb-0">
           <nuxt-link to="/">
-            <BaseImage :src="footerContent.logo.filename" :alt="footerContent.logo.alt" />
+            <BaseImage
+              v-if="footerContent.logo"
+              :src="footerContent.logo.filename"
+              :alt="footerContent.logo.alt"
+            />
           </nuxt-link>
         </div>
 
