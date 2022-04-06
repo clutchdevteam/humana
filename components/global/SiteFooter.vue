@@ -59,12 +59,12 @@
     computed: {
       ...mapState('global', ['spotsAvailable']),
       firstNumber() {
-        return this?.spotsAvailable?.spotsAvailable.charAt(0) > 0
-          ? this?.spotsAvailable?.spotsAvailable.charAt(0)
-          : 0
+        return this.spotsAvailable.spotsAvailable.charAt(0) > 0
+          ? this.spotsAvailable.spotsAvailable.charAt(0)
+          : '0'
       },
       secondNumber() {
-        return this?.spotsAvailable?.spotsAvailable.charAt(1) || 0
+        return this.spotsAvailable.spotsAvailable.charAt(1)
       },
     },
   }
