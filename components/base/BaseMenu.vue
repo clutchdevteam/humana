@@ -1,15 +1,8 @@
 <template>
   <div class="font-display">
-    <template v-if="menu.submenus">
-      <BaseMenuItem :menu="menu" :depth="depth + 1" />
-    </template>
+    <BaseMenuItem v-if="menu.submenus" :menu="menu" :depth="depth + 1" />
 
-    <nuxt-link
-      :class="`${classes} block`"
-      v-else
-      :id="menu.title.toLowerCase().replace(' ', '-')"
-      :to="menu.link.cached_url"
-    >
+    <nuxt-link :class="`${classes} block`" v-else :to="menu.link.cached_url">
       {{ menu.title }}
     </nuxt-link>
   </div>

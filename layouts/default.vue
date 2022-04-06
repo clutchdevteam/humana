@@ -20,8 +20,12 @@
 
 <script>
   import { mapState } from 'vuex'
+  import { PortalTarget } from 'portal-vue'
 
   export default {
+    components: {
+      PortalTarget,
+    },
     computed: {
       ...mapState('global', [
         'pageHasModalOpen',
@@ -53,5 +57,9 @@
   header,
   footer {
     flex-grow: 0;
+  }
+
+  main {
+    flex-grow: 1;
   }
 </style>

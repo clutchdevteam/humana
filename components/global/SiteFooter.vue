@@ -39,7 +39,7 @@
             <li
               class="font-display text-tertiary flex items-center"
               v-for="menu in footerContent.footerNav"
-              :key="menu.id"
+              :key="menu._uid"
             >
               <BaseLink :href="menu.link.cached_url">{{ menu.title }}</BaseLink>
               <BaseIcon file="right-chevron-icon" class="h-5 w-5 text-secondary-500 ml-2" alt="" />

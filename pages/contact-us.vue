@@ -184,15 +184,3 @@
     },
   }
 </script>
-
-<style lang="postcss" scoped>
-  section {
-    height: 125vh;
-  }
-
-  @media (min-width: 768px) {
-    section {
-      height: calc(100vh - 74.95px);
-    }
-  }
-</style>
