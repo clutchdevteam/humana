@@ -11,8 +11,8 @@
         </div>
         <div>
           <BaseText class="lg:w-3/4 mb-6">{{ spotsAvailable.text }}</BaseText>
-          <BaseButton :href="spotsAvailable.button[0].link.cached_url" theme="secondary">
-            {{ spotsAvailable.button[0].text }}
+          <BaseButton :href="spotsButton.link.cached_url" theme="secondary">
+            {{ spotsButton.text }}
           </BaseButton>
         </div>
       </div>
@@ -48,23 +48,28 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   export default {
     props: {
       footerContent: {
         type: Object,
         required: true,
       },
+      spotsAvailable: {
+        type: Object,
+        required: true,
+      },
     },
     computed: {
-      ...mapState('global', ['spotsAvailable']),
       firstNumber() {
-        return this.spotsAvailable.spotsAvailable.charAt(0) > 0
+        return this.spotsAvailable?.spotsAvailable.charAt(0) > 0
           ? this.spotsAvailable.spotsAvailable.charAt(0)
           : '0'
       },
       secondNumber() {
-        return this.spotsAvailable.spotsAvailable.charAt(1)
+        return this.spotsAvailable?.spotsAvailable.charAt(1)
+      },
+      spotsButton() {
+        return this.spotsAvailable.button[0]
       },
     },
   }

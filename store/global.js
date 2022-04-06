@@ -10,6 +10,14 @@ export const state = () => ({
   },
   spotsAvailable: {
     spotsAvailable: '00',
+    button: [
+      {
+        text: '',
+        link: {
+          cached_url: '',
+        },
+      },
+    ],
   },
 })
 
