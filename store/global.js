@@ -8,7 +8,9 @@ export const state = () => ({
     footerNav: [],
     logo: null,
   },
-  spotsAvailable: {},
+  spotsAvailable: {
+    spotsAvailable: '00',
+  },
 })
 
 export const mutations = {
