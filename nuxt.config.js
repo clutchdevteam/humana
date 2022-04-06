@@ -1,3 +1,5 @@
+const axios = require('axios')
+
 const isPreview = process.env.NODE_ENV === 'development'
 
 export default {
