@@ -3,8 +3,8 @@
     <SiteHeader
       :nav="mainNav"
       :logo="logo"
+      :spots-available="spotsAvailable.numberOfSpots"
       :inert="hasOpenMenu"
-      :spots-available="spotsAvailable"
     />
 
     <main :inert="hasOpenMenu">

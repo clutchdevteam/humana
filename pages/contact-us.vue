@@ -87,7 +87,7 @@
         },
         (error) => {
           if (this.$nuxt.context.isDev && this.$route.query._storyblok) {
-            this.logError(error)
+            console.log('error', error)
           }
         }
       )

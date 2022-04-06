@@ -72,11 +72,6 @@ export default {
               .then((res) => {
                 Object.keys(res.data.links).forEach((key) => {
                   if (!ignoreFiles.includes(res.data.links[key].slug)) {
-                    /*
-                     * This block isn't pretty but it prevents attempts
-                     * to generate the index.html file of folders that don't
-                     * have root files in Storyblok. (No index.html.)
-                     */
                     if (!(res.data.links[key].is_folder && !res.data.links[key].is_startpage)) {
                       routes.push('/' + res.data.links[key].slug)
                     }

@@ -16,7 +16,7 @@
 
           <li class="text-tertiary font-display flex items-center">
             <p class="mr-2">Spots Open:</p>
-            <p class="text-xl">{{ this.spotsAvailable.spotsAvailable }}</p>
+            <p class="text-xl">{{ spotsAvailable }}</p>
           </li>
 
           <li>
@@ -99,11 +99,15 @@
       },
       logo: {
         type: Object,
-        default: () => {},
+        required: true,
+      },
+      spotsAvailable: {
+        type: String,
+        default: '00',
       },
     },
     computed: {
-      ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen', 'spotsAvailable']),
+      ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen']),
       isHomepage() {
         return this.$route.fullPath === '/'
       },

@@ -8,17 +8,7 @@ export const state = () => ({
     footerNav: [],
     logo: null,
   },
-  spotsAvailable: {
-    spotsAvailable: '00',
-    button: [
-      {
-        text: '',
-        link: {
-          cached_url: '',
-        },
-      },
-    ],
-  },
+  spotsAvailable: {},
 })
 
 export const mutations = {
@@ -35,8 +25,8 @@ export const mutations = {
     state.mainNav = globals.mainNav
     state.logo = globals.logo
 
-    state.footer.footerNav = globals?.footer[0]?.footerNav
-    state.footer.logo = globals?.footer[0]?.logo
+    state.footer.footerNav = globals?.footer[0].footerNav
+    state.footer.logo = globals?.footer[0].logo
     state.spotsAvailable = globals?.spotsAvailable[0]
   },
 }

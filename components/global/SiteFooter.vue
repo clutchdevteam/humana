@@ -9,14 +9,17 @@
             <p>{{ secondNumber }}</p>
           </div>
         </div>
-        <div>
+
+        <div v-if="spotsAvailable.button">
           <BaseText class="lg:w-3/4 mb-6">{{ spotsAvailable.text }}</BaseText>
+
           <BaseButton :href="spotsButton.link.cached_url" theme="secondary">
             {{ spotsButton.text }}
           </BaseButton>
         </div>
       </div>
     </section>
+
     <footer class="bg-primary-700 py-12 lg:py-16 px-6 xl:px-0">
       <div
         class="container mx-auto flex flex-col lg:flex-row justify-between items-center mb-8 lg:mb-16"
@@ -65,15 +68,18 @@
     },
     computed: {
       firstNumber() {
-        return this.spotsAvailable?.spotsAvailable.charAt(0) > 0
-          ? this.spotsAvailable.spotsAvailable.charAt(0)
+        return Object.keys(this.spotsAvailable).length &&
+          this.spotsAvailable?.numberOfSpots.charAt(0) > 0
+          ? this.spotsAvailable.numberOfSpots.charAt(0)
           : '0'
       },
       secondNumber() {
-        return this.spotsAvailable?.spotsAvailable.charAt(1)
+        return Object.keys(this.spotsAvailable).length
+          ? this.spotsAvailable?.numberOfSpots.charAt(1)
+          : '0'
       },
       spotsButton() {
-        return this.spotsAvailable.button[0]
+        return this.spotsAvailable?.button.length ? this.spotsAvailable.button[0] : null
       },
     },
   }
