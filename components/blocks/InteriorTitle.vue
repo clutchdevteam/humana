@@ -1,8 +1,6 @@
 <template>
-  <section class="bg-pattern mb-24 lg:mb-36">
-    <div
-      class="flex flex-col items-center text-center space-y-6 px-6 xl:px-0 pt-[74px] lg:pt-20 pb-12 lg:pb-20 text-tertiary"
-    >
+  <section :class="`bg-pattern ${!isContactPage ? 'mb-24 lg:mb-36' : 'mb-12 lg:mb-20'}`">
+    <div class="flex flex-col items-center text-center space-y-6 px-6 xl:px-0 text-tertiary py-14">
       <BaseHeading class="mt-12" size="h2" tag="h1">{{ block.heading }}</BaseHeading>
       <p v-if="block.subheading" class="max-w-2xl">{{ block.subheading }}</p>
       <div v-if="block.button.length">
@@ -18,6 +16,11 @@
       block: {
         type: Object,
         required: true,
+      },
+    },
+    computed: {
+      isContactPage() {
+        return this.$route.fullPath === '/contact-us'
       },
     },
   }

@@ -1,5 +1,12 @@
 <template>
-  <Page v-if="story.content.component" :key="story.content._uid" :block="story.content" />
+  <div>
+    <component
+      :is="story.content.component"
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :block="story.content"
+    />
+  </div>
 </template>
 
 <script>

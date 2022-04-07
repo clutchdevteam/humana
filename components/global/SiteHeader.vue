@@ -113,6 +113,11 @@
         default: '00',
       },
     },
+    watch: {
+      $route(to, from) {
+        this.closeMenu()
+      },
+    },
     computed: {
       ...mapState('global', ['isMobileMenuOpen', 'pageHasModalOpen']),
       isHomepage() {
@@ -151,7 +156,7 @@
     }
   }
 
-  .nuxt-link-exact-active {
+  .desktop li div .nuxt-link-exact-active {
     @apply opacity-100;
   }
 </style>

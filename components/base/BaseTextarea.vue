@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <label class="text-sm mb-2" :for="_uid">
-      <slot name="label" /> <span v-if="required">*</span>
+    <label class="font-display text-primary-500 mb-2" :for="_uid">
+      <slot />
+      <span v-if="required">*</span>
     </label>
 
     <textarea
@@ -17,31 +18,31 @@
 </template>
 
 <script>
-export default {
-  inheritAttrs: false,
-  model: {
-    prop: "value",
-    event: "input",
-  },
-  props: {
-    rows: {
-      type: Number,
-      default: 4,
+  export default {
+    inheritAttrs: false,
+    model: {
+      prop: 'value',
+      event: 'input',
     },
-    placeholder: {
-      type: String,
-      default: "",
+    props: {
+      rows: {
+        type: Number,
+        default: 4,
+      },
+      placeholder: {
+        type: String,
+        default: '',
+      },
+      required: {
+        type: Boolean,
+        default: false,
+      },
     },
-    required: {
-      type: Boolean,
-      default: false,
+    computed: {
+      listeners() {
+        const { input, ...listeners } = this.$listeners
+        return listeners
+      },
     },
-  },
-  computed: {
-    listeners() {
-      const { input, ...listeners } = this.$listeners;
-      return listeners;
-    },
-  },
-};
+  }
 </script>

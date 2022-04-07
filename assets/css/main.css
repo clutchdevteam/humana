@@ -8,6 +8,12 @@ body {
   @apply overflow-x-hidden font-body;
 }
 
+input,
+textarea,
+select {
+  @apply font-display font-light;
+}
+
 .base-wrapper {
   @apply my-24 lg:my-36 px-6 xl:px-0;
 }

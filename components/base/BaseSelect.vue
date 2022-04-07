@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <label class="text-sm mb-2" :for="fieldId">
-      <slot>Select an option</slot> <span v-if="isRequired">*</span>
+    <label class="font-display text-primary-500 mb-2" :for="fieldId">
+      <slot>Select an option</slot>
+      <span v-if="isRequired">*</span>
     </label>
 
     <select
@@ -23,32 +24,30 @@
 </template>
 
 <script>
-export default {
-  inheritAttrs: false,
-  props: {
-    options: {
-      type: Array,
-      required: true,
+  export default {
+    inheritAttrs: false,
+    props: {
+      options: {
+        type: Array,
+        required: true,
+      },
+      isRequired: {
+        type: Boolean,
+        default: false,
+      },
+      disabled: {
+        type: Boolean,
+        default: false,
+      },
     },
-    isRequired: {
-      type: Boolean,
-      default: false,
+    computed: {
+      fieldId() {
+        return `${this.$slots.default[0].text.toLowerCase().replace(' ', '-')}-${this._uid}`
+      },
+      listeners() {
+        const { input, ...listeners } = this.$listeners
+        return listeners
+      },
     },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
-    fieldId() {
-      return `${this.$slots.default[0].text.toLowerCase().replace(" ", "-")}-${
-        this._uid
-      }`;
-    },
-    listeners() {
-      const { input, ...listeners } = this.$listeners;
-      return listeners;
-    },
-  },
-};
+  }
 </script>

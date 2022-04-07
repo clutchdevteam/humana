@@ -1,6 +1,6 @@
 <template>
   <div>
-    <client-only>
+    <client-only v-if="!isContactPage">
       <section class="container mx-auto content-width mb-12 lg:mb-20">
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6 lg:px-0">
           <div class="flex flex-col items-center lg:items-end">
@@ -84,6 +84,9 @@
       },
       spotsButton() {
         return this.spotsAvailable?.button.length ? this.spotsAvailable.button[0] : null
+      },
+      isContactPage() {
+        return this.$route.fullPath === '/contact-us'
       },
     },
   }
