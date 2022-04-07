@@ -7,28 +7,30 @@
         </BaseLink>
       </div>
 
-      <nav class="hidden md:block">
-        <ul class="desktop flex space-x-6 items-center">
-          <li v-for="(menu, index) in nav" :key="menu._uid" class="flex items-center">
-            <BaseMenu
-              :id="`${menu.title.toLowerCase().replace(' ', '-')}-${index}`"
-              classes="font-display text-white tracking-wider"
-              :menu="menu"
-              :depth="0"
-            />
-            <BaseIcon file="right-chevron-icon" class="h-5 w-5 text-secondary-500 ml-2" alt="" />
-          </li>
+      <client-only>
+        <nav class="hidden md:block">
+          <ul class="desktop flex space-x-6 items-center">
+            <li v-for="(menu, index) in nav" :key="menu._uid" class="flex items-center">
+              <BaseMenu
+                :id="`${menu.title.toLowerCase().replace(' ', '-')}-${index}`"
+                classes="font-display text-white tracking-wider"
+                :menu="menu"
+                :depth="0"
+              />
+              <BaseIcon file="right-chevron-icon" class="h-5 w-5 text-secondary-500 ml-2" alt="" />
+            </li>
 
-          <li class="text-tertiary font-display flex items-center">
-            <p class="mr-2">Spots Open:</p>
-            <p class="text-xl">{{ spotsAvailable }}</p>
-          </li>
+            <li class="text-tertiary font-display flex items-center">
+              <p class="mr-2">Spots Open:</p>
+              <p class="text-xl">{{ spotsAvailable }}</p>
+            </li>
 
-          <li>
-            <BaseButton href="/contact-us">Register</BaseButton>
-          </li>
-        </ul>
-      </nav>
+            <li>
+              <BaseButton href="/contact-us">Register</BaseButton>
+            </li>
+          </ul>
+        </nav>
+      </client-only>
 
       <div class="mobile md:hidden">
         <button
@@ -104,7 +106,7 @@
       },
       logo: {
         type: Object,
-        required: true,
+        default: () => {},
       },
       spotsAvailable: {
         type: String,

@@ -1,24 +1,28 @@
 <template>
   <div>
-    <section class="container mx-auto content-width mb-12 lg:mb-20">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6 lg:px-0">
-        <div class="flex flex-col items-center lg:items-end">
-          <BaseHeading class="mb-6" size="h2">Number of spots left</BaseHeading>
-          <div class="numbers grid grid-cols-2 gap-4 font-display font-bold text-8xl leading-none">
-            <p>{{ firstNumber }}</p>
-            <p>{{ secondNumber }}</p>
+    <client-only>
+      <section class="container mx-auto content-width mb-12 lg:mb-20">
+        <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6 lg:px-0">
+          <div class="flex flex-col items-center lg:items-end">
+            <BaseHeading class="mb-6" size="h2">Number of spots left</BaseHeading>
+            <div
+              class="numbers grid grid-cols-2 gap-4 font-display font-bold text-8xl leading-none"
+            >
+              <p>{{ firstNumber }}</p>
+              <p>{{ secondNumber }}</p>
+            </div>
+          </div>
+
+          <div v-if="spotsAvailable.button">
+            <BaseText class="lg:w-3/4 mb-6">{{ spotsAvailable.text }}</BaseText>
+
+            <BaseButton :href="spotsButton.link.cached_url" theme="secondary">
+              {{ spotsButton.text }}
+            </BaseButton>
           </div>
         </div>
-
-        <div v-if="spotsAvailable.button">
-          <BaseText class="lg:w-3/4 mb-6">{{ spotsAvailable.text }}</BaseText>
-
-          <BaseButton :href="spotsButton.link.cached_url" theme="secondary">
-            {{ spotsButton.text }}
-          </BaseButton>
-        </div>
-      </div>
-    </section>
+      </section>
+    </client-only>
 
     <footer class="bg-primary-700 py-12 lg:py-16 px-6 xl:px-0">
       <div
