@@ -7,9 +7,11 @@
     {{ APP }}
 
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
+      <input type="text" name="first_name" />
+      <input type="text" name="last_name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
+      <select name="category"></select>
       <textarea name="message"></textarea>
 
       <button type="submit">Send</button>

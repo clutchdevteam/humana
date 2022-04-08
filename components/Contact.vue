@@ -97,5 +97,39 @@
         required: true,
       },
     },
+    methods: {
+      encode(data) {
+        return Object.keys(data)
+          .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+          .join('&')
+      },
+      handleSubmit() {
+        fetch('/', {
+          method: 'post',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: this.encode({
+            'form-name': 'contact',
+            ...this.form,
+          }),
+        })
+          .then((res, err) => {
+            if (res.status === 200) {
+              this.responseMessage = "Thanks for reaching out! We'll be in contact shortly!"
+              this.responseState = 'success'
+
+              this.form.first_name = ''
+              this.form.last_name = ''
+              this.form.email = ''
+              this.form.phone = ''
+              this.form.category = ''
+              this.form.question = ''
+            } else {
+              this.responseMessage = 'Oops! Looks like something went wrong. Please try again!'
+              this.responseState = 'error'
+            }
+          })
+          .catch((e) => console.error(e))
+      },
+    },
   }
 </script>
