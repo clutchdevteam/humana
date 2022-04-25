@@ -17,7 +17,7 @@
             />
           </BaseIconWrapper>
           <BaseHeading
-            class="text-primary-500 mb-6 w-3/4 text-center lg:text-left"
+            class="text-secondary-500 mb-6 w-3/4 text-center lg:text-left"
             size="h4"
             tag="h3"
           >

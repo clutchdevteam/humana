@@ -4,6 +4,7 @@
       <section class="container mx-auto content-width mb-12 lg:mb-20">
         <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center px-6 lg:px-0">
           <div class="flex flex-col items-center lg:items-end">
+            <p class="text-secondary-500 font-display">Total Spots: 10</p>
             <BaseHeading class="mb-6" size="h2">Number of spots left</BaseHeading>
             <div
               class="numbers grid grid-cols-2 gap-4 font-display font-bold text-8xl leading-none"
@@ -94,6 +95,6 @@
 
 <style lang="postcss" scoped>
   .numbers p {
-    @apply bg-primary-500 text-white py-2 px-6;
+    @apply text-secondary-500 bg-tertiary py-2 px-6;
   }
 </style>

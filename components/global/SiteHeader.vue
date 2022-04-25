@@ -21,7 +21,11 @@
             </li>
 
             <li class="text-tertiary font-display flex items-center">
-              <p class="mr-2">Spots Open:</p>
+              <p>
+                Total Spots: 10
+                <span class="text-secondary-500">&nbsp;|&nbsp;</span>
+              </p>
+              <p class="mr-2">Spots Left:</p>
               <p class="text-xl">{{ spotsAvailable }}</p>
             </li>
 

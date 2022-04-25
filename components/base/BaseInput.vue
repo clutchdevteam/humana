@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <label class="mb-2 font-display text-primary-500" :for="_uid">
+    <label class="mb-2 font-display text-secondary-500" :for="_uid">
       <slot />
       <span v-if="required">*</span>
     </label>

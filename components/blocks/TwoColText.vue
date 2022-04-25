@@ -12,7 +12,7 @@
 
       <p
         v-if="block.kicker"
-        class="font-display font-semibold text-lg lg:text-xl text-primary-500 lg:text-center lg:w-1/2 mx-auto"
+        class="font-display font-semibold text-lg lg:text-xl text-secondary-500 lg:text-center lg:w-1/2 mx-auto"
       >
         {{ block.kicker }}
       </p>

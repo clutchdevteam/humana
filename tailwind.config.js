@@ -1,27 +1,27 @@
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   theme: {
     container: {
       center: true,
     },
     fontFamily: {
-      display: ["IBM Plex Sans", "sans-serif"],
-      body: ["EB Garamond", "serif"],
+      display: ['IBM Plex Sans', 'sans-serif'],
+      body: ['EB Garamond', 'serif'],
     },
     extend: {
       colors: {
         primary: {
-          300: "#EFF5F5",
-          500: "#399399",
-          700: "#1C5A5E",
+          300: '#EFF5F5',
+          500: '#399399',
+          700: '#272727',
         },
         secondary: {
-          300: "#630D0D",
-          500: "#E55252",
+          300: '#2D9AFF',
+          500: '#2d9aff',
         },
-        tertiary: "#FFFAE7",
-        black: "#141414",
+        tertiary: '#f4f4f4',
+        black: '#141414',
       },
     },
   },
-};
+}

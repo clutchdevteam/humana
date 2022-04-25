@@ -14,7 +14,7 @@ export default {
   },
 
   loading: {
-    color: '#E55252',
+    color: '#2D9AFF',
     height: '2px',
     throttle: 0,
   },

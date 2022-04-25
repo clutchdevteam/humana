@@ -24,20 +24,6 @@
             <BaseInput class="mb-4" v-model="form.phone" name="phone" type="tel">Phone</BaseInput>
           </div>
 
-          <BaseSelect
-            class="mb-4"
-            v-model="form.category"
-            name="category"
-            :options="options"
-            required
-          >
-            Choose Bootcamp Category
-          </BaseSelect>
-
-          <BaseTextarea class="mb-4" v-model="form.question" name="question" :rows="6" required>
-            Ask us about machine learning!
-          </BaseTextarea>
-
           <p class="hidden">
             <label>
               Don't fill this out if you're human:
@@ -76,8 +62,6 @@
           last_name: '',
           email: '',
           phone: '',
-          category: '',
-          question: '',
         },
         options: [
           {
@@ -121,8 +105,6 @@
               this.form.last_name = ''
               this.form.email = ''
               this.form.phone = ''
-              this.form.category = ''
-              this.form.question = ''
             } else {
               this.responseMessage = 'Oops! Looks like something went wrong. Please try again!'
               this.responseState = 'error'
