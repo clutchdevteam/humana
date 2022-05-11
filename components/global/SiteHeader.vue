@@ -4,8 +4,8 @@
       <div class="w-28 lg:w-32 z-50">
         <BaseLink href="/" :inert="isMobileMenuOpen">
           <BaseImage v-if="logo" :src="logo.filename" :alt="logo.alt" />
+          <span class="sr-only">Humana Code Academy</span>
         </BaseLink>
-        <span class="sr-only">Humana Code Academy</span>
       </div>
 
       <client-only>
