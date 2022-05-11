@@ -5,6 +5,7 @@
         <BaseLink href="/" :inert="isMobileMenuOpen">
           <BaseImage v-if="logo" :src="logo.filename" :alt="logo.alt" />
         </BaseLink>
+        <span class="sr-only">Humana Code Academy</span>
       </div>
 
       <client-only>
