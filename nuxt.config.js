@@ -21,7 +21,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Humana',
+    title: 'Humana Code Academy',
     htmlAttrs: {
       lang: 'en',
     },
@@ -31,6 +31,57 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { hid: 'title', name: 'title', content: 'Humana Code Academy' },
       { name: 'format-detection', content: 'telephone=no' },
+      [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' },
+        { name: 'format-detection', content: 'telephone=no' },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://www.humanacode.ai',
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Land your dream job in data science.',
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'A fresh and faster approach to learning data science.',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://humanacode.ai/og-image.png',
+        },
+        {
+          hid: 'twitter:url',
+          name: 'twitter:url',
+          content: 'https://humanacode.ai',
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Land your dream job in data science.',
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'A fresh and faster approach to learning data science.',
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: 'https://humanacode.ai/og-image.png',
+        },
+      ],
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
