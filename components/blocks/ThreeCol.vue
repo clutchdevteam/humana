@@ -3,11 +3,7 @@
     <BaseHeading class="text-center mb-8 lg:mb-12" size="h2">{{ block.heading }}</BaseHeading>
 
     <div class="grid lg:grid-cols-3 gap-12 lg:gap-24 mb-8 lg:mb-12">
-      <div
-        class="flex flex-col items-center justify-between"
-        v-for="item in block.columns"
-        :key="item._uid"
-      >
+      <div v-for="item in block.columns" :key="item._uid">
         <div class="flex flex-col items-center lg:items-start w-full">
           <BaseIconWrapper v-if="item.icon.length" class="mb-6">
             <BaseIcon
